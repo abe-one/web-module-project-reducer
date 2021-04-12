@@ -46,11 +46,11 @@ This simplified calculator adds the entire number selected, rather then adds dig
 
 > _We now have access to the state within our App component (You can even test this using console.log or your React dev tools). Let's render the state as is on our screen._
 
-- [ ] Replace "X" with a reference to `state.operation` within the operation element.
-- [ ] Replace "0" with a reference to `state.memory` within the memory element.
-- [ ] Replace "0" with a reference to `state.total` when passing a value to our TotalDisplay component.
-- [ ] Check to see that your total, operation and memory display in the UI match your initialState (100, \* and 100 respectively)
-- [ ] **Test** that you are connected to state by changing the initialState value in your reducer to:
+- [x] Replace "X" with a reference to `state.operation` within the operation element.
+- [x] Replace "0" with a reference to `state.memory` within the memory element.
+- [x] Replace "0" with a reference to `state.total` when passing a value to our TotalDisplay component.
+- [x] Check to see that your total, operation and memory display in the UI match your initialState (100, \* and 100 respectively)
+- [x] **Test** that you are connected to state by changing the initialState value in your reducer to:
 
 ```
 export const initialState = {
@@ -60,22 +60,22 @@ export const initialState = {
 }
 ```
 
-- [ ] Check to see that your display correctly reflects the change to your state.
+- [x] Check to see that your display correctly reflects the change to your state.
 
 #### Connect a premade action.
 
 > _Now that we can see our state, let's change allow the user to change it. Let's start with a simple premade action...adding one to our total._
 
-- [ ] Note the `ADD_ONE` action case (in ./reducer/index.js) and `addOne` action creator (in ./actions/index.js). This action adds 1 to our total.
-- [ ] Import the `addOne` action creator into App.js.
-- [ ] Within `App.js`, create an event handler connected to the 1 button's `onClick` method.
-- [ ] Within your event handler, dispatch the `addOne` action creator.
-- [ ] **Test** that your event is correctly connected by pushing the 1 button in the browser. Your total should increase by 1.
-- [ ] **Think** about the path of execution from the clicking of the one button to the rendering of the updated total. What is the order of execution? Within the `Understanding-Question.md` file, write out in your own words the steps of that process.
+- [x] Note the `ADD_ONE` action case (in ./reducer/index.js) and `addOne` action creator (in ./actions/index.js). This action adds 1 to our total.
+- [x] Import the `addOne` action creator into App.js.
+- [x] Within `App.js`, create an event handler connected to the 1 button's `onClick` method.
+- [x] Within your event handler, dispatch the `addOne` action creator.
+- [x] **Test** that your event is correctly connected by pushing the 1 button in the browser. Your total should increase by 1.
+- [x] **Think** about the path of execution from the clicking of the one button to the rendering of the updated total. What is the order of execution? Within the `Understanding-Question.md` file, write out in your own words the steps of that process.
 
 #### Connect a better premade action.
 
-> _Adding indivisual actions for every number would be tedious. Let's add in an action that can work for ALL numerical input_
+> _Adding individual actions for every number would be tedious. Let's add in an action that can work for ALL numerical input_
 
 - [ ] Note the `APPLY_NUMBER` action case (in ./reducer/index.js) and `applyNumber` action creator (in ./actions/index.js). This action adds, multiplies or subtracts a number passed into the action creator.
 - [ ] Import the `applyNumber` action creator into `App.js.`
