@@ -6,7 +6,7 @@ import CalcButton from "./components/CalcButton";
 
 ///////////////////// States /////////////////////
 import reducer, { initialState } from "./reducers/index";
-import { applyNumber, addOne } from "./actions/index";
+import { applyNumber, changeOperation } from "./actions/index";
 
 import "./App.css";
 
@@ -15,6 +15,10 @@ function App() {
 
   const handleNum = (e) => {
     dispatch(applyNumber(parseFloat(e.target.innerText)));
+  };
+
+  const handleOper = (e) => {
+    dispatch(changeOperation(e.target.innerText));
   };
 
   return (
@@ -68,9 +72,9 @@ function App() {
             </div>
 
             <div className="row">
-              <CalcButton value={"+"} />
-              <CalcButton value={"*"} />
-              <CalcButton value={"-"} />
+              <CalcButton value={"+"} onClick={handleOper} />
+              <CalcButton value={"*"} onClick={handleOper} />
+              <CalcButton value={"-"} onClick={handleOper} />
             </div>
 
             <div className="row ce_button">
