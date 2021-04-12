@@ -4,9 +4,16 @@ import React, { useReducer } from "react";
 import TotalDisplay from "./components/TotalDisplay";
 import CalcButton from "./components/CalcButton";
 
-///////////////////// States /////////////////////
+///////////////////// State /////////////////////
 import reducer, { initialState } from "./reducers/index";
-import { applyNumber, changeOperation, clearDisplay } from "./actions/index";
+import {
+  applyNumber,
+  changeOperation,
+  clearDisplay,
+  setMemory,
+  recallMemory,
+  clearMemory,
+} from "./actions/index";
 
 import "./App.css";
 
@@ -48,9 +55,15 @@ function App() {
             </div>
 
             <div className="row">
-              <CalcButton value={"M+"} />
-              <CalcButton value={"MR"} />
-              <CalcButton value={"MC"} />
+              <CalcButton value={"M+"} onClick={() => dispatch(setMemory())} />
+              <CalcButton
+                value={"MR"}
+                onClick={() => dispatch(recallMemory())}
+              />
+              <CalcButton
+                value={"MC"}
+                onClick={(_) => dispatch(clearMemory())}
+              />
             </div>
 
             <div className="row">
